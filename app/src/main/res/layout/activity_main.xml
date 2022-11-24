@@ -71,7 +71,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="#fff"
-        android:backgroundTint="#3a67ff"
+        android:backgroundTint="@color/blue"
         android:fadingEdge="horizontal"
         app:cnb_menuResource="@menu/bottom_menu"
         app:cnb_unselectedColor="@android:color/white" />

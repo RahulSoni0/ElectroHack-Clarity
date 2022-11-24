@@ -65,19 +65,16 @@ public class AuthActivity extends AppCompatActivity {
 
                 new AuthUI.IdpConfig.PhoneBuilder().build());
 
-        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setIsSmartLockEnabled(false).build();
+        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setTheme(R.style.YellowTheme).setIsSmartLockEnabled(false).build();
 
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
     }
 
     private void handleGoogleLogin(View view) {
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-
-                new AuthUI.IdpConfig.GoogleBuilder().build()
+        List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build()
 
         );
-
-        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setIsSmartLockEnabled(false).build();
+        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setIsSmartLockEnabled(false).setTheme(R.style.BlueTheme).build();
 
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
     }
@@ -85,7 +82,7 @@ public class AuthActivity extends AppCompatActivity {
     private void handleEmailLogin(View view) {
         List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build());
 
-        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setIsSmartLockEnabled(false).build();
+        Intent intent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).setTosAndPrivacyPolicyUrls("https://example.com", "https://example.com").setLogo(R.drawable.panda_meditation).setAlwaysShowSignInMethodScreen(false).setTheme(R.style.GreenTheme).setIsSmartLockEnabled(false).build();
 
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
     }
