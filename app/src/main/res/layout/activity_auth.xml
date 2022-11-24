@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F8FF"
+    tools:context=".onboarding.auth.RegisterFragment">
+
+
+    <TextView
+        android:id="@+id/tvResisterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:text="Clarity"
+        android:textColor="#434343"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResisterDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvResisterTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Take control over emotions \n to take control of  your mental health"
+        android:textColor="#434343"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/tvResisterTitle"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/tvResisterTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvResisterTitle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/btnPhoneNoSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:src="@drawable/phonesignin" />
+
+        <ImageView
+            android:id="@+id/btnEmailSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:src="@drawable/emailsign" />
+
+        <ImageView
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:src="@drawable/googlesign" />
+
+
+    </LinearLayout>
+
+    <ImageView
+
+        android:id="@+id/ivResisterImg"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/tvResisterDescription"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/tvResisterDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvResisterDescription"
+        app:layout_constraintVertical_bias="0.272"
+        app:srcCompat="@drawable/panda_meditation" />
+
+    <TextView
+        android:id="@+id/tvGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvResisterTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:paddingBottom="4dp"
+        android:text="Get Started"
+        android:textColor="#434343"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/ivResisterImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivResisterImg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

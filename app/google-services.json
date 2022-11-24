@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "306208587501",
+    "project_id": "clarity-ddffb",
+    "storage_bucket": "clarity-ddffb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306208587501:android:0aff956883b721491e96e4",
+        "android_client_info": {
+          "package_name": "com.rahulsoni0.clarity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306208587501-gqhoeg3948dcojnkic5b63eapet7t0ft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rahulsoni0.clarity",
+            "certificate_hash": "314f6de2dba489885a83df3afd302083094ef141"
+          }
+        },
+        {
+          "client_id": "306208587501-r9v7l4l414i5bocr74dusmnsjje3qghf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl_Fswto63vO3PeM_E1xEPkHxZoyQnU6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306208587501-r9v7l4l414i5bocr74dusmnsjje3qghf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
