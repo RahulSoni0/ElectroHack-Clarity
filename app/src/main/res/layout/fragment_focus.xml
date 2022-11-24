@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".ui.fragments.FocusFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--    <EditText-->
+    <!--        android:id="@+id/edtTimerDuration"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:fontFamily="@font/poppins"-->
+    <!--        android:hint="Select your focus duration"-->
+    <!--        android:textColor="@color/blue" />-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Focus Frag" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/confetti"
+            android:layout_width="match_parent"
+            android:layout_height="415dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/confetti1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="46dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="156dp"
+                android:layout_height="64dp"
+                android:fontFamily="@font/poppins"
+                android:text="Start"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <com.view.circulartimerview.CircularTimerView
+                android:id="@+id/progress_circular"
+                android:layout_width="346dp"
+                android:layout_height="346dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:backgroundColor="@android:color/white"
+                app:backgroundWidth="24"
+                app:isClockwise="true"
+                app:maxValue="100"
+                app:progressBackgroundColor="@color/white"
+                app:progressColor="#00E676"
+                app:progressTextColor="@color/black"
+                app:roundedCorners="true"
+                app:startingPoint="top"
+                app:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F50057"
+                android:text="Stop" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

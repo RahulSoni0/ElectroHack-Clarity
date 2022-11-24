@@ -32,9 +32,9 @@
         android:fontFamily="@font/poppins"
         android:gravity="center"
         android:padding="4dp"
-        android:textSize="18dp"
         android:text="To be healthy as a whole, \n Mental wellness plays a role "
         android:textColor="@color/white"
+        android:textSize="18dp"
         android:textStyle="italic" />
 
 
