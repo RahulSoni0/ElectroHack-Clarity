@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.rahulsoni0.clarity.adapters.ExploreAdapter;
+import com.rahulsoni0.clarity.adapters.ExploreArticlesAdapter;
+import com.rahulsoni0.clarity.adapters.ExploreBooksAdapter;
+import com.rahulsoni0.clarity.adapters.ExplorePodcastsAdapter;
 import com.rahulsoni0.clarity.databinding.FragmentExploreBinding;
 import com.rahulsoni0.clarity.models.ExploreModel;
 
@@ -27,7 +29,9 @@ public class ExploreFragment extends Fragment {
 
 
     private FragmentExploreBinding binding;
-    ExploreAdapter adapter;
+    ExploreBooksAdapter BooksAdapter;
+    ExplorePodcastsAdapter PodcastsAdapter;
+    ExploreArticlesAdapter ArticlesAdapter;
     List<ExploreModel> ArticlesDataList = new ArrayList<>();
     List<ExploreModel> PodcastsDataList = new ArrayList<>();
     List<ExploreModel> BooksDataList = new ArrayList<>();
@@ -84,10 +88,19 @@ public class ExploreFragment extends Fragment {
                 if (documentSnapshot.exists()) {
                     List<String> s1 = (List<String>) documentSnapshot.get("1");
                     List<String> s2 = (List<String>) documentSnapshot.get("2");
-                    ExploreModel temp = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
+                    List<String> s3 = (List<String>) documentSnapshot.get("3");
+                    List<String> s4 = (List<String>) documentSnapshot.get("4");
+                    List<String> s5 = (List<String>) documentSnapshot.get("5");
+                    ExploreModel temp1 = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
                     ExploreModel temp2 = new ExploreModel(s2.get(0), s2.get(1), s2.get(2), s2.get(3));
-                    ArticlesDataList.add(temp);
+                    ExploreModel temp3 = new ExploreModel(s3.get(0), s3.get(1), s3.get(2), s3.get(3));
+                    ExploreModel temp4 = new ExploreModel(s4.get(0), s4.get(1), s4.get(2), s4.get(3));
+                    ExploreModel temp5 = new ExploreModel(s5.get(0), s5.get(1), s5.get(2), s5.get(3));
+                    ArticlesDataList.add(temp1);
                     ArticlesDataList.add(temp2);
+                    ArticlesDataList.add(temp3);
+                    ArticlesDataList.add(temp4);
+                    ArticlesDataList.add(temp5);
                     initRvArticles();
                     Log.d("####", "onSuccess: " + s1.toString());
                 } else {
@@ -101,10 +114,19 @@ public class ExploreFragment extends Fragment {
                 if (documentSnapshot.exists()) {
                     List<String> s1 = (List<String>) documentSnapshot.get("1");
                     List<String> s2 = (List<String>) documentSnapshot.get("2");
-                    ExploreModel temp = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
+                    List<String> s3 = (List<String>) documentSnapshot.get("3");
+                    List<String> s4 = (List<String>) documentSnapshot.get("4");
+
+                    ExploreModel temp1 = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
                     ExploreModel temp2 = new ExploreModel(s2.get(0), s2.get(1), s2.get(2), s2.get(3));
-                    BooksDataList.add(temp);
+                    ExploreModel temp3 = new ExploreModel(s3.get(0), s3.get(1), s3.get(2), s3.get(3));
+                    ExploreModel temp4 = new ExploreModel(s4.get(0), s4.get(1), s4.get(2), s4.get(3));
+
+                    BooksDataList.add(temp1);
                     BooksDataList.add(temp2);
+                    BooksDataList.add(temp3);
+                    BooksDataList.add(temp4);
+
                     initRvBooks();
                     Log.d("####", "onSuccess: " + s1.toString());
                 } else {
@@ -118,10 +140,17 @@ public class ExploreFragment extends Fragment {
                 if (documentSnapshot.exists()) {
                     List<String> s1 = (List<String>) documentSnapshot.get("1");
                     List<String> s2 = (List<String>) documentSnapshot.get("2");
-                    ExploreModel temp = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
+                    List<String> s3 = (List<String>) documentSnapshot.get("3");
+                    List<String> s4 = (List<String>) documentSnapshot.get("4");
+                    ExploreModel temp1 = new ExploreModel(s1.get(0), s1.get(1), s1.get(2), s1.get(3));
                     ExploreModel temp2 = new ExploreModel(s2.get(0), s2.get(1), s2.get(2), s2.get(3));
-                    PodcastsDataList.add(temp);
+                    ExploreModel temp3 = new ExploreModel(s3.get(0), s3.get(1), s3.get(2), s3.get(3));
+                    ExploreModel temp4 = new ExploreModel(s4.get(0), s4.get(1), s4.get(2), s4.get(3));
+                    PodcastsDataList.add(temp1);
                     PodcastsDataList.add(temp2);
+                    PodcastsDataList.add(temp3);
+                    PodcastsDataList.add(temp4);
+
                     initRvPodcasts();
                     Log.d("####", "onSuccess: " + s1.toString());
                 } else {
@@ -134,26 +163,26 @@ public class ExploreFragment extends Fragment {
     }
 
     private void initRvArticles() {
-        adapter = new ExploreAdapter(ArticlesDataList, getActivity().getBaseContext());
-        binding.rvArticles.setAdapter(adapter);
+        ArticlesAdapter = new ExploreArticlesAdapter(ArticlesDataList, getActivity().getBaseContext());
+        binding.rvArticles.setAdapter(ArticlesAdapter);
         binding.rvArticles.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        adapter.notifyDataSetChanged();
+        ArticlesAdapter.notifyDataSetChanged();
 
     }
 
     private void initRvPodcasts() {
-        adapter = new ExploreAdapter(PodcastsDataList, getActivity().getBaseContext());
-        binding.rvPodcasts.setAdapter(adapter);
+        PodcastsAdapter = new ExplorePodcastsAdapter(PodcastsDataList, getActivity().getBaseContext());
+        binding.rvPodcasts.setAdapter(PodcastsAdapter);
         binding.rvPodcasts.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        adapter.notifyDataSetChanged();
+        PodcastsAdapter.notifyDataSetChanged();
 
     }
 
     private void initRvBooks() {
-        adapter = new ExploreAdapter(BooksDataList, getActivity().getBaseContext());
-        binding.rvBooks.setAdapter(adapter);
+        BooksAdapter = new ExploreBooksAdapter(BooksDataList, getActivity().getBaseContext());
+        binding.rvBooks.setAdapter(BooksAdapter);
         binding.rvBooks.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        adapter.notifyDataSetChanged();
+        BooksAdapter.notifyDataSetChanged();
 
     }
 }
