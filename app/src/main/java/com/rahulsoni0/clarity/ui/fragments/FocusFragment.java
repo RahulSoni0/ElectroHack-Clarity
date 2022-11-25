@@ -39,7 +39,7 @@ public class FocusFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         storage = new Storage(getContext().getApplicationContext());
 
-        int oldCount  = storage.getfocusCount();
+        int oldCount = storage.getfocusCount();
         String s = "Total Focus rounds : " + oldCount;
         binding.tvFocusCount.setText(s);
 
@@ -92,7 +92,7 @@ public class FocusFragment extends Fragment {
                 binding.confetti.setVisibility(View.VISIBLE);
                 ++focusCount;
                 storage.setFocusCount(focusCount);
-                binding.tvFocusCount.setText("Total Focus rounds : " + (oldCount+focusCount)+"");
+                binding.tvFocusCount.setText("Total Focus rounds : " + (oldCount + focusCount) + "");
 
             }
         }, 10, TimeFormatEnum.SECONDS, 10);
