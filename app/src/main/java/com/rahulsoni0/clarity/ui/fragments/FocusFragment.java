@@ -71,7 +71,7 @@ public class FocusFragment extends Fragment {
                 Toast.makeText(getActivity().getBaseContext(), "FINISHED", Toast.LENGTH_SHORT).show();
                 binding.progressCircular.setPrefix("");
                 binding.progressCircular.setSuffix("");
-                binding.progressCircular.setText("FINISHED THANKS!");
+                binding.progressCircular.setText(" Yay!! Completed");
                 binding.confetti.setVisibility(View.VISIBLE);
 
             }
