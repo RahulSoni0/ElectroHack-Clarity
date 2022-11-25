@@ -1,19 +1,17 @@
 package com.rahulsoni0.clarity.ui.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rahulsoni0.clarity.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.rahulsoni0.clarity.adapters.homePosterAdapter;
 import com.rahulsoni0.clarity.databinding.FragmentHomeBinding;
 
@@ -22,14 +20,17 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
-   private FragmentHomeBinding binding;
+    private FragmentHomeBinding binding;
     ArrayList<String> homePosterList = new ArrayList<>();
     ArrayList<String> arrangedPosterList = new ArrayList<>();
     homePosterAdapter posterAdapter;
+
+
     int currentPage;
     final static int DELAY_TIME = 1500;
     final static int PERIOD_TIME = 2000;
     Timer timer;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +45,12 @@ public class HomeFragment extends Fragment {
         return binding.getRoot();
 
 
-
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         //hardcoded url's for sliders
         homePosterList.add("https://firebasestorage.googleapis.com/v0/b/sociaqr.appspot.com/o/1.png?alt=media&token=d9de33ac-c158-4fe7-ae75-71ec1f7435af");
         homePosterList.add("https://firebasestorage.googleapis.com/v0/b/sociaqr.appspot.com/o/2.png?alt=media&token=065eb590-d6ed-4099-9a24-4be522f7dd72");

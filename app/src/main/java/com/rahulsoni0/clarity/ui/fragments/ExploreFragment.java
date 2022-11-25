@@ -18,6 +18,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.rahulsoni0.clarity.adapters.ExploreArticlesAdapter;
 import com.rahulsoni0.clarity.adapters.ExploreBooksAdapter;
 import com.rahulsoni0.clarity.adapters.ExplorePodcastsAdapter;
+import com.rahulsoni0.clarity.cache.SavedListDatabase;
+import com.rahulsoni0.clarity.cache.SavedListEntityModel;
 import com.rahulsoni0.clarity.databinding.FragmentExploreBinding;
 import com.rahulsoni0.clarity.models.ExploreModel;
 
@@ -35,6 +37,7 @@ public class ExploreFragment extends Fragment {
     List<ExploreModel> ArticlesDataList = new ArrayList<>();
     List<ExploreModel> PodcastsDataList = new ArrayList<>();
     List<ExploreModel> BooksDataList = new ArrayList<>();
+    List<SavedListEntityModel> savedData = new ArrayList<>();
     FirebaseFirestore firestore;
 
     @Override
@@ -55,6 +58,10 @@ public class ExploreFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         firestore = FirebaseFirestore.getInstance();
+
+        SavedListDatabase db = SavedListDatabase.getInstance(getContext());
+        List<SavedListEntityModel> sn = db.savedListDao().getAlldata();
+        savedData.addAll(sn);
         initRvArticles();
         initRvBooks();
         initRvPodcasts();
@@ -158,12 +165,10 @@ public class ExploreFragment extends Fragment {
                 }
             }
         });
-
-
     }
 
     private void initRvArticles() {
-        ArticlesAdapter = new ExploreArticlesAdapter(ArticlesDataList, getActivity().getBaseContext());
+        ArticlesAdapter = new ExploreArticlesAdapter(ArticlesDataList, savedData, getContext());
         binding.rvArticles.setAdapter(ArticlesAdapter);
         binding.rvArticles.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         ArticlesAdapter.notifyDataSetChanged();
@@ -171,7 +176,7 @@ public class ExploreFragment extends Fragment {
     }
 
     private void initRvPodcasts() {
-        PodcastsAdapter = new ExplorePodcastsAdapter(PodcastsDataList, getActivity().getBaseContext());
+        PodcastsAdapter = new ExplorePodcastsAdapter(PodcastsDataList, savedData, getContext());
         binding.rvPodcasts.setAdapter(PodcastsAdapter);
         binding.rvPodcasts.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         PodcastsAdapter.notifyDataSetChanged();
@@ -179,7 +184,7 @@ public class ExploreFragment extends Fragment {
     }
 
     private void initRvBooks() {
-        BooksAdapter = new ExploreBooksAdapter(BooksDataList, getActivity().getBaseContext());
+        BooksAdapter = new ExploreBooksAdapter(BooksDataList, savedData, getContext());
         binding.rvBooks.setAdapter(BooksAdapter);
         binding.rvBooks.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         BooksAdapter.notifyDataSetChanged();

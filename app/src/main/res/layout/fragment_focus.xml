@@ -77,6 +77,24 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F50057"
                 android:text="Stop" />
+
+            <TextView
+                android:id="@+id/tvFocusCount"
+                android:fontFamily="@font/poppins"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Focus rounds : "/>
+
+                <Button
+                    android:id="@+id/btnResetFocus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#F39A9A"
+                    android:text="Reset focus slop count" />
+
+
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>

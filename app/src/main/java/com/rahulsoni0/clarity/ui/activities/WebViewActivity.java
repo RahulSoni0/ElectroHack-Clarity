@@ -30,7 +30,7 @@ public class WebViewActivity extends AppCompatActivity {
         }
         if (from.equals("article")) {
             binding.tvTitle.setText("Article details");
-        } else if (from.equals("books")) {
+        } else if (url.contains(".pdf")) {
             String path = "";
             path += url;
             bookUrl = "https://drive.google.com/viewerng/viewer?embedded=true&url=" + path;

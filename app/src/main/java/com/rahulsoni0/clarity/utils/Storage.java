@@ -56,6 +56,13 @@ public class Storage {
         return prefs.getBoolean("isNewUser", true);
     }
 
+    public int getfocusCount(){
+        return prefs.getInt("focusCount", 0);
+    }
+    public void setFocusCount(int count){
+        editor.putInt("focusCount", count);
+        editor.apply();
+    }
     public void setNewUser(boolean isNew) {
 
         editor.putBoolean("isNewUser", isNew);
