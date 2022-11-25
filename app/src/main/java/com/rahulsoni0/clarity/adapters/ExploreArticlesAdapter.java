@@ -1,6 +1,7 @@
 package com.rahulsoni0.clarity.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.rahulsoni0.clarity.R;
 import com.rahulsoni0.clarity.models.ExploreModel;
+import com.rahulsoni0.clarity.ui.activities.WebViewActivity;
 
 import java.util.List;
 
-public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreviewHolder> {
+public class ExploreArticlesAdapter extends RecyclerView.Adapter<ExploreArticlesAdapter.ExploreviewHolder> {
 
     List<ExploreModel> DataList;
     Context context;
 
-    public ExploreAdapter(List<ExploreModel> DataList, Context context) {
+    public ExploreArticlesAdapter(List<ExploreModel> DataList, Context context) {
         this.DataList = DataList;
         this.context = context;
     }
@@ -63,8 +65,12 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.Explorev
             readmoreIv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    Toast.makeText(context, "go to : " + DataList.get(getAdapterPosition()).getDetailsUrl(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(itemView.getContext(), WebViewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("url", DataList.get(getAdapterPosition()).getDetailsUrl());
+                    intent.putExtra("from", "article");
+                    itemView.getContext().startActivity(intent);
+                    Toast.makeText(itemView.getContext(), "Redirecting.....", Toast.LENGTH_SHORT).show();
                 }
             });
         }
