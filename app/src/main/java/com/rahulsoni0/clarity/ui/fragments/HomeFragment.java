@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
 
     int currentPage;
     final static int DELAY_TIME = 1500;
-    final static int PERIOD_TIME = 2000;
+    final static int PERIOD_TIME = 1500;
     Timer timer;
 
     @Override
@@ -69,9 +69,9 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //hardcoded url's for sliders
-        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/sociaqr.appspot.com/o/1.png?alt=media&token=d9de33ac-c158-4fe7-ae75-71ec1f7435af");
-        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/sociaqr.appspot.com/o/2.png?alt=media&token=065eb590-d6ed-4099-9a24-4be522f7dd72");
-        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/sociaqr.appspot.com/o/3.png?alt=media&token=860395e8-26bf-4014-94aa-ddcfcc72a5a3");
+        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/clarity-ddffb.appspot.com/o/1.png?alt=media&token=49da152d-c55e-4d78-a865-11658d79babc");
+        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/clarity-ddffb.appspot.com/o/2.png?alt=media&token=8e1402c6-dc20-45b3-b83a-b7316b930fbf");
+        homePosterList.add("https://firebasestorage.googleapis.com/v0/b/clarity-ddffb.appspot.com/o/3.png?alt=media&token=f0191417-29fb-4f50-8b72-7d0b5829e31c");
         //end
         setPosters(homePosterList); //calling poster slider function
 
