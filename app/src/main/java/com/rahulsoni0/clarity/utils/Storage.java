@@ -15,7 +15,7 @@ public class Storage {
     }
 
     public String getName() {
-        return prefs.getString("name", "");
+        return prefs.getString("name", " user ");
     }
 
     public void setName(String name) {

@@ -58,14 +58,11 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.view
             name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
-                    Intent i = new Intent(context, ChatActivity.class);
+                    Intent i = new Intent(itemView.getContext(), ChatActivity.class);
                     i.putExtra("selected_topic", s.get(getAdapterPosition()));
                     i.putExtra("user_name", userName);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     itemView.getContext().startActivity(i);
-
-
                 }
             });
 

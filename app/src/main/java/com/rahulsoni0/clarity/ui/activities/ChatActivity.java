@@ -3,6 +3,7 @@ package com.rahulsoni0.clarity.ui.activities;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +13,7 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.rahulsoni0.clarity.R;
+import com.google.firebase.database.FirebaseDatabase;
 import com.rahulsoni0.clarity.adapters.ChatAdapter;
 import com.rahulsoni0.clarity.databinding.ActivityChatBinding;
 
@@ -35,10 +36,18 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityChatBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_chat);
-        UserName = getIntent().getExtras().get("user_name").toString();
-        SelectedTopic = getIntent().getExtras().get("selected_topic").toString();
-        setTitle("Topic : " + SelectedTopic);
+        setContentView(binding.getRoot());
+
+        if (getIntent().getExtras() != null) {
+            UserName = getIntent().getExtras().get("user_name").toString();
+            SelectedTopic = getIntent().getExtras().get("selected_topic").toString();
+            Toast.makeText(this, " " + SelectedTopic + "   " + UserName, Toast.LENGTH_SHORT).show();
+        }
+
+
+        dbr = FirebaseDatabase.getInstance().getReference().child(SelectedTopic);
+        binding.tvChatRoomTitle.setText("Topic : " + SelectedTopic);
+
         initRv();
 
         binding.btnSend.setOnClickListener(new View.OnClickListener() {
@@ -47,12 +56,12 @@ public class ChatActivity extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<String, Object>();
                 user_msg_key = dbr.push().getKey();
                 dbr.updateChildren(map);
-
                 DatabaseReference dbr2 = dbr.child(user_msg_key);
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("msg", binding.edtMsg.getText().toString());
                 map2.put("user", UserName);
                 dbr2.updateChildren(map2);
+                initRv();
                 binding.edtMsg.setText("");
             }
         });
@@ -104,6 +113,7 @@ public class ChatActivity extends AppCompatActivity {
             conversation = user + ": " + msg;
 
             chats.add(conversation);
+
             initRv();
 
         }

@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rahulsoni0.clarity.adapters.CommunityAdapter;
 import com.rahulsoni0.clarity.databinding.FragmentCommunityBinding;
+import com.rahulsoni0.clarity.utils.Storage;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,6 +35,7 @@ public class CommunityFragment extends Fragment {
     CommunityAdapter adapter;
     List<String> communityName = new ArrayList<>();
     private DatabaseReference dbref;
+    Storage storage;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class CommunityFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        storage = new Storage(getContext());
 
         initRv();
         initData();
@@ -88,7 +91,7 @@ public class CommunityFragment extends Fragment {
     }
 
     private void initRv() {
-        adapter = new CommunityAdapter(communityName, getContext(), " Rahul Soni ");
+        adapter = new CommunityAdapter(communityName, getContext(), storage.getName() + " ");
         binding.rvTopics.setAdapter(adapter);
         binding.rvTopics.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         adapter.notifyDataSetChanged();

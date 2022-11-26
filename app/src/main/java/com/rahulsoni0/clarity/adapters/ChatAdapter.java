@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rahulsoni0.clarity.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.viewHolder> {
 
-    List<String> s;
+    List<String> s = new ArrayList<>();
     Context context;
-
 
     public ChatAdapter(List<String> s, Context context) {
         this.s = s;
@@ -34,10 +34,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.viewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-
         holder.name.setText(s.get(position));
-
-
     }
 
     @Override
@@ -46,12 +43,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.viewHolder> {
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
-
         private TextView name;
-
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.tvItemCommunityName);
+            name = itemView.findViewById(R.id.tvChats);
 
         }
     }
