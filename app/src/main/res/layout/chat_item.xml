@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginVertical="12dp"
     android:elevation="4dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="#D7F3FF"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -25,7 +25,7 @@
             android:text="Name : "
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

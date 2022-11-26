@@ -44,7 +44,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvChat"
                     android:layout_width="match_parent"
-                    android:layout_height="564dp">
+                    android:layout_height="564dp"
+                    android:layout_marginBottom="8dp"
+                    >
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -52,10 +54,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:weightSum="4"
                     android:orientation="horizontal">
 
                     <EditText
                         android:id="@+id/edtMsg"
+                        android:elevation="2dp"
+                        android:layout_weight="3"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:singleLine="true"
+                        android:background="@drawable/editfieldforchat"
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
@@ -65,14 +74,16 @@
 
                     <Button
                         android:id="@+id/btnSend"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:fontFamily="@font/poppins"
                         android:padding="2dp"
-                        android:text="send"
+                        android:text="Send"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                         />
                 </LinearLayout>
 
             </LinearLayout>

@@ -39,6 +39,9 @@ public class WebViewActivity extends AppCompatActivity {
         } else if (from.equals("podcasts")) {
             binding.tvTitle.setText("Podcast details");
         }
+        else if(from.equals("lofi")){
+            binding.tvTitle.setText("Enjoy lofi");
+        }
         setupWebView();
 //        binding.btnBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
