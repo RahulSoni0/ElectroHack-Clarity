@@ -36,7 +36,7 @@
             android:layout_weight="5"
             android:fontFamily="@font/poppins"
             android:gravity="center"
-            android:text="Saved  News"
+            android:text="Saved  Resources"
             android:textColor="#141619"
             android:textSize="24sp"
             android:textStyle="bold"></TextView>
