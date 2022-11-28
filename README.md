@@ -12,7 +12,7 @@ Reg. No :- 2020UGEE046
 ## 👨🏽‍💻  Tech 
 
 - Implemented Firebase Auth ui for phone , email and google Authentication and Authorization.
-- Implemented WebView to play Podcasts , songs read articles within app.
+- Implemented WebView to play Podcasts , songs , read articles within app.
 - Implemented inbuild pdf viewer
 - Local Caching of personalised Saved list using RoomDB.
 - Timer with counter and Oncomplete Lottie Animations.
