@@ -25,11 +25,10 @@ Reg. No :- 2020UGEE046
 - Diverse collections of Lofi beats for study , sleep and relaxing mood
 
 ## Screenshots 
-![lq1](https://user-images.githubusercontent.com/62587060/139126502-c80f803a-e6d4-4467-acd0-a58484394bc7.png)
-![lq2](https://user-images.githubusercontent.com/62587060/139126515-d6a8631e-4d4d-428b-91a5-822cfd0f1d66.png)
+![lq1](https://raw.githubusercontent.com/RahulSoni0/ElectroHack-2020ugee046/main/assets/overview_clarity.png)
 
 ## Demo
-https://user-images.githubusercontent.com/62587060/193089957-95f2cbda-15ae-47e5-b6db-0e13fa682e8e.mp4
+https://youtu.be/Te6_WxOs13U
 
 
 
